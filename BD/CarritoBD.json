@@ -1,0 +1,12 @@
+[ 
+  {
+    "id": 0,
+    "timeproducto":"2022-01-01 23:01",
+    "nombre": "Escuadra",
+    "descripcion": "escuadra util para tareas precisas",
+     "codigoprod": "AA01",
+     "precio": "123.45",
+     "stock" : 401,
+     "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+   }
+]
