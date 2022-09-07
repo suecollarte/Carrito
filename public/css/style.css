@@ -1,1 +1,35 @@
+/* CSS Document */
 
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+ }
+ 
+ p {
+  color: red;
+}
+html {
+  font-size: 10px; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
+  font-family: "Open Sans", sans-serif; /* Este debe ser el resto del resultado que obtuviste de Google fonts */
+}
+.colorBrown {
+    color: brown;
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .textMessage {
+    float: left;
+    color: green;
+    font-style: italic;
+    margin-left: 10px;
+  }
+  
+  .cont {
+    position: relative;
+    width: 100%;
+  }
+  
