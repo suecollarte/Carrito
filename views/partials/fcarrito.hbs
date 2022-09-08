@@ -1,29 +1,28 @@
 
    <h1>Administracion Carrito</h1>
-        <form onsubmit="javascript:return enviarCarrito(this)">
+        <form onsubmit="javascript:enviarCarrito()">
             <div class="mb-3">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="userComment">
+                <input type="text" class="form-control" id="nombreC"  aria-describedby="userComment">
                 </div>
            <div class="mb-3">
-                <label for="mesj">descripcion</label>
-                <input type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="userComment">
+                <label for="descripcion">descripcion</label>
+                <input type="text" class="form-control" id="descripcionC"  name="descripcionC" aria-describedby="userComment">
                 
             </div> 
             <div class="mb-3">
             <label>codigo</label>
-            <input type="text" class="form-control" id="codigo" name="codigo" aria-describedby="userComment">
+            <input type="text" class="form-control" id="codigoC"   aria-describedby="userComment">
             </div>
             <div class="mb-3">
 
-            <label>stock</label><input type="text" class="form-control" id="stock" name="stock" aria-describedby="userComment">
+            <label>stock</label><input type="text" class="form-control" id="stockC"  aria-describedby="userComment">
             </div>
              <div class="mb-3">
-            <label>precio</label><input type="text" class="form-control" id="precio" name="precio" aria-describedby="userComment">
+            <label>precio</label><input type="text" class="form-control" id="precioC"   aria-describedby="userComment">
             </div>
             <div class="mb-3">
-            <label>foto</label><input type="text" class="form-control" id="foto" name="foto" aria-describedby="userComment">
+            <label>foto</label><input type="text" class="form-control" id="fotoC"   aria-describedby="userComment">
             </div>
-            <input type="hidden" id="fecha" name="fecha" value="03-12-2022">
             <input type="submit" class="btn btn-success" >
         </form>
