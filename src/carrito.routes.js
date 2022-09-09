@@ -25,7 +25,7 @@ routerCarrito.post("/:id/productos", async (req, res) => {
     res.end();
 });
 
-routerCarrito.get("/:id/productos", (req, res) => {
+routerCarrito.get("/:id/productos", async (req, res) => {
  const carrito= await carritoApi.getAll(req.params.id)
  res.json(carrito.productos);
 
