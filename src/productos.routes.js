@@ -1,7 +1,7 @@
 import { Router} from "express";
 const routerProducto = Router();
 import { ContenedorProducto } from "./ContenedorProducto.js";
-const productoApi= new ContenedorProducto('ProductoDB.json');
+const productoApi= new ContenedorProducto('../DB/ProductoBD.json');
 
 
 const config={

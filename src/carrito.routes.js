@@ -4,8 +4,8 @@ import { ContenedorProducto } from "./ContenedorProducto.js";
 
 const carritosRouter = Router();
 
-const carritoApi= new ContenedorProducto('CarritoDB.json');
-const productoApi= new ContenedorProducto('ProductoDB.json');
+const carritoApi= new ContenedorProducto('../DB/CarritoDB.json');
+const productoApi= new ContenedorProducto('../DB/ProductoDB.json');
 
 
 //Router
