@@ -13,15 +13,23 @@ const http = new HttpServer(app);
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+const {Router}= express;
 
 //Rutas
-const routerProducto = require("./src/productos.routes.js");
-const routerCarrito = require("./src/carrito.routes.js");
+import  routerCarrito  from "./src/carrito.routes.js";
+import routerProducto  from "./src/productos.routes.js";
 const ContenedorProducto = require("./src/ContenedorProducto.js");
+//const ContenedorProducto = require("./src/ContenedorProducto.js");
 
 app.use("/productos", routerProducto);
 app.use("/carrito", routerCarrito);
 
+const config={
+    isAdmin: true
+
+}
+
+const esAdmin= config.isAdmin;
 
 //engine plantilla
 app.engine(
@@ -40,21 +48,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 //BD
-const CARRITO_DB=[];
+/* const CARRITO_DB=[];
 const p=new ContenedorProducto('./BD/ProductoBD.txt');
-const PRODUCTO_DB= [];
+const PRODUCTO_DB= []; */
 
 /* ---------------------- Rutas ----------------------*/
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
    //res.sendFile(path.join(__dirname, './public', 'index.html'));
    res.render('home',{ PRODUCTO_DB });
-});
+}); */
 
-/* app.post('/productos',(req,res)=>{
-  CARRITO_DB.push(req.body);
-  res.redirect('/');
-  io.sockets.emit('from-server-mensaje', req.body);
-})  */
+
 
 
 /* ---------------------- WebSocket ----------------------*/
