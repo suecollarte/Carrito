@@ -17,6 +17,13 @@ routerCarrito.post("/", async (req, res) => {
     res.json({id: await carritoApi.save({productos: []})});
   });
 
+routerCarrito.post("/:id/productos", async (req, res) => {
+    const carro = await carritoApi.getById(req.params.id);
+    const producto = await productoApi.getById(req.body.id);
+    carro.productos.push(producto);
+    await carritoApi.save(carro, req.params.id)
+    res.end();
+});
 
 routerCarrito.get("/:id/productos", (req, res) => {
  const carrito= await carritoApi.getAll(req.params.id)
