@@ -1,5 +1,6 @@
-const fs= require('fs');
-class ContenedorProducto {
+import { promises as fs } from 'fs';
+
+export class ContenedorProducto {
 
     constructor (archivo){
           this.archivo=archivo
@@ -10,25 +11,9 @@ class ContenedorProducto {
 
     async getById(j)
     {
-        
         let todo= await this.getAll();
-        
-        const arr=todo.map(function(obj){
-            return obj;
-        });
-        ContenedorProducto.array=arr;
-       
-        for(let i=0;i< ContenedorProducto.array.length;i++)
-        {
-            if(i==j-1){
-               i=ContenedorProducto.array.length;
-               return ContenedorProducto.array[j-1];
-               
-            }
-        }
-        
-       
-        
+        const encontrar = todo.find(o =o.id == j)
+        return encontrar    
         
     }
 
@@ -36,8 +21,7 @@ class ContenedorProducto {
     
         try{
     
-            const contenido= await fs.readFileSync(this.archivo,'utf-8'); //sincrono solo se ejecuta este primero
-            console.log('getall');
+            const contenido=  await fs.readFileSync(this.archivo,'utf-8'); //sincrono solo se ejecuta este primero
             const datos=JSON.parse(contenido); //parse lo pone este string como array
             return datos;
         }
@@ -132,5 +116,3 @@ class ContenedorProducto {
 }
 }
 
-
-module.exports = ContenedorProducto;
