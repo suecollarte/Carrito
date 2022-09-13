@@ -19,7 +19,8 @@
      "stock" : 40,
      "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
    }
-   , {
+   , 
+   {
     "id": 2,
     "timeproducto":"2022-01-01 23:01",
     "nombre": "Serrucho",
@@ -29,4 +30,4 @@
      "stock" : 500,
      "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
    }
-];
+]
