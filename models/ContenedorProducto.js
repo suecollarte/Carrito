@@ -1,4 +1,4 @@
-const fs =require('fs');
+const fs =require('fs').promises;
 
 class ContenedorProducto {
 
@@ -52,7 +52,7 @@ class ContenedorProducto {
         try {
     
         fs.writeFileSync(this.archivo,paso);
-       console.log('Largo actual:'+ContenedorProducto.array.length);
+       //console.log('Largo actual:'+obj1.length);
         } 
         catch (err){
     
@@ -116,4 +116,4 @@ class ContenedorProducto {
 }
 }
 
-module.exports= ContenedorProducto;
+module.exports=ContenedorProducto;
