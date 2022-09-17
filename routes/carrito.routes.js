@@ -19,21 +19,21 @@ routerCarrito.post("/", async (req, res) => {
     res.json({id: await BDCarritos.save({BDProducto: []})});
   });
 
-routerCarrito.post("/:id/BDProducto", async (req, res) => {
+routerCarrito.post("/:id/productos", async (req, res) => {
     const carro = await BDCarritos.getById(req.params.id);
     const producto = await BDProducto.getById(req.body.id);
-    carro.BDProducto.push(producto);
+    carro.productos.push(producto);
     await BDCarritos.save(carro, req.params.id)
    
 });
 
-routerCarrito.get("/:id/BDProducto", async (req, res) => {
+routerCarrito.get("/:id/productos", async (req, res) => {
  const carrito= await BDCarritos.getAll(req.params.id)
- res.json(carrito.BDProducto);
+ res.json(carrito.productos);
 
 }) 
 
-routerCarrito.put("/:id/BDProducto", (req, res) => {
+routerCarrito.put("/:id/productos", (req, res) => {
   res.status(201).json(respuesta);
 });
 

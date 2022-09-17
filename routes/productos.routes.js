@@ -2,7 +2,7 @@ const express = require('express');
 const {Router}= express;
 const routerProducto = Router();
 const ContenedorProducto = require("../models/ContenedorProducto.js");
-const BDProducto= new ContenedorProducto('../DB/ProductoBD.json');
+const BDProducto= new ContenedorProducto('./DB/ProductoBD.json');
 
 
 
@@ -19,21 +19,23 @@ function administrador(req, res,next){
   }
   else {
     next();
+  }
+
+}
 
 //Servicios
 //Router
-
-
-routerProducto.get("/", async (req, res) => {
+routerProducto.get("/", async (req, res,next) => {
   const Producto = await BDProducto.getAll();
-  
-  res.json("Despliegue listo");
+  res.json("Despliegue listo productos");
 });
 
 routerProducto.get("/:id", async (req, res) => {
+ 
   res.json(await BDProducto.getById(req.params.id))
 });
 routerProducto.post("/", administrador, async(req, res) => {
+  
   res.json(await BDProducto.save(req.params.id))  
 });
 
