@@ -19,12 +19,11 @@ function administrador(req, res,next){
   }
   else {
     next();
-  }
-
-}
 
 //Servicios
 //Router
+
+
 routerProducto.get("/", async (req, res) => {
   const Producto = await BDProducto.getAll();
   
