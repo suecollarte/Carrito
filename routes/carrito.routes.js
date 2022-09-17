@@ -5,47 +5,46 @@ const ContenedorProducto = require("../models/ContenedorProducto.js");
 
 const routerCarrito = Router();
 
-const carritoApi= new ContenedorProducto();
-carritoApi.archivo='../DB/CarritoDB.json';
-const productoApi= new ContenedorProducto();
-productoApi.archivo='../DB/ProductoDB.json';
+const BDCarritos= new ContenedorProducto('../DB/CarritoDB.json');
+const BDProducto= new ContenedorProducto('../DB/ProductoDB.json');
+
 
 //Router
 
 routerCarrito.get("/", async (req, res) => {
-  res.json(await carritoApi.getAll());
+  res.json(await BDCarritos.getAll());
 });
 
 routerCarrito.post("/", async (req, res) => {
-    res.json({id: await carritoApi.save({productos: []})});
+    res.json({id: await BDCarritos.save({BDProducto: []})});
   });
 
-routerCarrito.post("/:id/productos", async (req, res) => {
-    const carro = await carritoApi.getById(req.params.id);
-    const producto = await productoApi.getById(req.body.id);
-    carro.productos.push(producto);
-    await carritoApi.save(carro, req.params.id)
-    //res.end();
+routerCarrito.post("/:id/BDProducto", async (req, res) => {
+    const carro = await BDCarritos.getById(req.params.id);
+    const producto = await BDProducto.getById(req.body.id);
+    carro.BDProducto.push(producto);
+    await BDCarritos.save(carro, req.params.id)
+   
 });
 
-routerCarrito.get("/:id/productos", async (req, res) => {
- const carrito= await carritoApi.getAll(req.params.id)
- res.json(carrito.productos);
+routerCarrito.get("/:id/BDProducto", async (req, res) => {
+ const carrito= await BDCarritos.getAll(req.params.id)
+ res.json(carrito.BDProducto);
 
 }) 
 
-routerCarrito.put("/:id/productos", (req, res) => {
+routerCarrito.put("/:id/BDProducto", (req, res) => {
   res.status(201).json(respuesta);
 });
 
-routerCarrito.delete("/:id/productos/:idProd", async (req, res) => {
-  const carrito= await carritoApi.getAll(req.params.id)
-  const index =carrito.productos.findIndex(p =>p.id == req.params.idProd)
+routerCarrito.delete("/:id/BDProducto/:idProd", async (req, res) => {
+  const carrito= await BDCarritos.getAll(req.params.id)
+  const index =carrito.BDProducto.findIndex(p =>p.id == req.params.idProd)
   if (index != -1){
-    carrito.productos.splice(index,1)
-    await carritoApi.save(carrito,req.params.id)
+    carrito.BDProducto.splice(index,1)
+    await BDCarritos.save(carrito,req.params.id)
   }
-    //res.end()
+    res.status(404).json({error:"no encontrado"});
 });
 
 module.exports = routerCarrito;
