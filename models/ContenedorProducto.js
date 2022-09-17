@@ -23,7 +23,7 @@ class ContenedorProducto {
     
         try{
     
-            const contenido=  await fs.readFileSync(this.archivo,'utf-8'); //sincrono solo se ejecuta este primero
+            const contenido=  await fs.readFile(this.archivo,'utf-8'); //sincrono solo se ejecuta este primero
             const datos=JSON.parse(contenido); //parse lo pone este string como array
             return datos;
         }
