@@ -1,3 +1,5 @@
+const { error } = require('console');
+
 const fs =require('fs').promises;
 
 class ContenedorProducto {
@@ -51,7 +53,7 @@ class ContenedorProducto {
 
         try {
     
-        fs.writeFileSync(this.archivo,paso);
+        fs.writeFile(this.archivo,paso);
        //console.log('Largo actual:'+obj1.length);
         } 
         catch (err){
@@ -67,7 +69,7 @@ class ContenedorProducto {
     async deleteAll(){
 
         try {
-        await fs.writeFileSync(this.archivo,JSON.stringify('[]',null,2));
+        await fs.writeFile(this.archivo,JSON.stringify('[]',null,2));
         }   
         catch (err){
     
