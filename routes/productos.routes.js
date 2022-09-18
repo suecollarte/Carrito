@@ -2,7 +2,7 @@ const express = require('express');
 const {Router}= express;
 const routerProducto = Router();
 const ContenedorProducto = require("../models/ContenedorProducto.js");
-const BDProducto= new ContenedorProducto('./DB/ProductoBD.json');
+const ListaProductos= new ContenedorProducto('./DB/ProductoBD.json');
 
 
 
@@ -26,26 +26,50 @@ function administrador(req, res,next){
 //Servicios
 //Router
 routerProducto.get("/", async (req, res,next) => {
-  const Producto = await BDProducto.getAll();
-  res.json("Despliegue listo productos");
-});
-
-routerProducto.get("/:id", async (req, res) => {
- 
-  res.json(await BDProducto.getById(req.params.id))
-});
-routerProducto.post("/", administrador, async(req, res) => {
   
-  res.json(await BDProducto.save(req.params.id))  
+  try {
+  const Producto = await ListaProductos.getAll();
+  res.status(200).send(Producto);
+
+  } catch (error) {
+    next(error);
+  }
 });
 
-routerProducto.put("/:id", administrador, async(req, res) => {
-  res.json(await BDProducto.save(req.params.id))  
+routerProducto.get("/:id", async (req, res,next) => {
+  try {
+ 
+    const Producto= await ListaProductos.getById(req.params.id);
+    res.status(200).send(Producto);
+  } catch (error) {
+    next(error);
+  }
 });
 
 
-routerProducto.delete("/:id", administrador, async(req, res) => {
-  res.json(await BDProducto.deletebyId(req.params.id))  
+routerProducto.post("/:id", administrador,async (req, res,next) => {
+  
+  const Producto= await ListaProductos.save(req.body);
+  try {
+    
+    res.status(200).send(Producto)  ;
+  } catch (error) {
+      next(error);
+  }
+});
+
+routerProducto.put("/:id", administrador, async (req, res,next) => {
+  try {
+    const Producto = await ListaProductos.update(req.params.id, req.body);
+    res.status(200).send(Producto);
+  } catch (error) {
+    next(error);
+  } 
+});
+
+
+routerProducto.delete("/:id", administrador, async (req, res,next) => {
+  res.json(await ListaProductos.deletebyId(req.params.id))  
 });
 
 module.exports = routerProducto;

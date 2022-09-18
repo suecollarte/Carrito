@@ -5,30 +5,47 @@ const ContenedorProducto = require("../models/ContenedorProducto.js");
 
 const routerCarrito = Router();
 
-const BDCarritos= new ContenedorProducto('../DB/CarritoDB.json');
-const BDProducto= new ContenedorProducto('../DB/ProductoDB.json');
+const ListaCarrito= new ContenedorProducto('./DB/CarritoBD.json');
+const ListaProducto= new ContenedorProducto('./DB/ProductoBD.json');
 
 
 //Router
+routerCarrito.get("/", async (req, res,next) => {
+  const Carrito = await ListaCarrito.getAll();
+  try {
+  
+  res.status(200).send(Carrito);
 
-routerCarrito.get("/", async (req, res) => {
-  res.json(await BDCarritos.getAll());
+  } catch (error) {
+    next(error);
+  }
+
 });
 
-routerCarrito.post("/", async (req, res) => {
-    res.json({id: await BDCarritos.save({BDProducto: []})});
+routerCarrito.post("/:id", async (req, res) => {
+  const Carrito= {id: await ListaCarrito.save(req.body)};
+
+    
+  try {
+    //const Carrito= {ListaCarrito.save({Productos: []})};
+    res.status(200).send(Carrito)  ;
+  } catch (error) {
+      next(error);
+  }
+ 
+    //res.json({id: await ListaCarrito.save({ListaProducto: []})});
   });
 
-routerCarrito.post("/:id/productos", async (req, res) => {
-    const carro = await BDCarritos.getById(req.params.id);
-    const producto = await BDProducto.getById(req.body.id);
+routerCarrito.post("/:id/", async (req, res) => {
+    const carro = await ListaCarrito.getById(req.params.id);
+    const producto = await ListaProducto.getById(req.body.id);
     carro.productos.push(producto);
-    await BDCarritos.save(carro, req.params.id)
+    await ListaCarrito.save(carro, req.params.id)
    
 });
 
-routerCarrito.get("/:id/productos", async (req, res) => {
- const carrito= await BDCarritos.getAll(req.params.id)
+routerCarrito.get("/:id/", async (req, res) => {
+ const carrito= await ListaCarrito.getAll(req.params.id)
  res.json(carrito.productos);
 
 }) 
@@ -37,12 +54,12 @@ routerCarrito.put("/:id/productos", (req, res) => {
   res.status(201).json(respuesta);
 });
 
-routerCarrito.delete("/:id/BDProducto/:idProd", async (req, res) => {
-  const carrito= await BDCarritos.getAll(req.params.id)
-  const index =carrito.BDProducto.findIndex(p =>p.id == req.params.idProd)
+routerCarrito.delete("/:id/ListaProducto/:idProd", async (req, res) => {
+  const carrito= await ListaCarrito.getAll(req.params.id)
+  const index =carrito.ListaProducto.findIndex(p =>p.id == req.params.idProd)
   if (index != -1){
-    carrito.BDProducto.splice(index,1)
-    await BDCarritos.save(carrito,req.params.id)
+    carrito.ListaProducto.splice(index,1)
+    await ListaCarrito.save(carrito,req.params.id)
   }
     res.status(404).json({error:"no encontrado"});
 });
