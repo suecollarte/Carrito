@@ -11,9 +11,14 @@ class ContenedorProducto {
 
     async getById(j)
     {
+        const todo= await this.getAll();
+        
+        
         try{
-            let todo= await this.getAll();
-            const encontrar = todo.find(o =o.id == j)
+          const encontrar = todo.find(elemento => elemento.id == j)
+        
+        console.log(encontrar);  
+            
             return encontrar    
         } catch (error){
             return []
@@ -22,7 +27,7 @@ class ContenedorProducto {
     }
 
     async getAll(){
-    
+   
         try{
     
             const contenido=  await fs.readFile(this.archivo,'utf-8'); //sincrono solo se ejecuta este primero
@@ -42,19 +47,21 @@ class ContenedorProducto {
     
     async save(e){
     const obj= await this.getAll();
+    //console.log(e);
     const obj1=obj.map(function(obj2){
     return obj2;
     });
-
-    //ContenedorProducto.array=obj1;
+    
     obj1.push(e);
-   
+    
+     obj1[(obj1.length -1)].id= (obj1.length -2);
+     console.log((obj1.length -2));
     const paso=JSON.stringify(obj1,null,2);
-
+  
         try {
     
         fs.writeFile(this.archivo,paso);
-       //console.log('Largo actual:'+obj1.length);
+       
         } 
         catch (err){
     
@@ -81,7 +88,7 @@ class ContenedorProducto {
 
 
 
-    deletebyId(j){
+    async deletebyId(j){
     
     let todo= this.getAll();
     
@@ -104,7 +111,7 @@ class ContenedorProducto {
     console.log('Largo Nuevo array',arr2.length);
     try {
     
-        fs.writeFileSync(this.archivo,JSON.stringify(arr2,null,2));
+        await fs.writeFile(this.archivo,JSON.stringify(arr2,null,2));
     
         } 
         catch (err){
