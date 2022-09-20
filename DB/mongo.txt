@@ -1,0 +1,246 @@
+db.carrito.insertMany([{
+    
+    "timestamp": 1662991332087,
+    "productos": [
+      {
+       
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA01",
+        "precio": "123.45",
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+       {
+        
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Tornillo",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA11",
+        "precio": "1500",
+        "stock": 4010,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      }
+    ]
+  },
+  {
+   
+    "timestamp": 1662991332087,
+    "productos": [
+      {
+        
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA01",
+        "precio": "123.45",
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      }
+    ]
+  },
+  {
+    
+    "timestamp": 1662991332087,
+    "productos": [
+      {
+       
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA01",
+        "precio": "123.45",
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+        {
+       
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Cuchara",
+        "descripcion": "juego de 9 cucharas ",
+        "codigoprod": "AAC1",
+        "precio": "12350",
+        "stock": 3000,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      }
+    ]
+  }
+ 
+ ]);
+
+ db.mensaje.insertMany([{
+    "mensaje":"Hola que tal tienen jugueras",
+    "email":"mail.56@gmail.com",
+    "timestamp":"1663469626"
+    },{
+        "mensaje":"Hola que tal tienen jugueras",
+    "email":"mail.56@gmail.com",
+    "timestamp":"1663469626"
+    },
+    {
+        "mensaje":"Hola que tal tienen jugueras",
+    "email":"mail.56@gmail.com",
+    "timestamp":"1663469626"
+    },
+    {
+        "mensaje":"Hola que tal tienen jugueras",
+    "email":"mail.56@gmail.com",
+    "timestamp":"1663469626"
+    },
+    {
+        "mensaje":"Hola que tal tienen jugueras",
+    "email":"mail.56@gmail.com",
+    "timestamp":"1663469626"
+    },
+    {
+        "mensaje":"Hola que tal tienen jugueras",
+    "email":"mail.56@gmail.com",
+    "timestamp":"1663469626"
+    }
+]);
+
+
+
+db.producto.insertMany(
+    [
+      {
+        "id":11,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA01",
+        "precio": 4000,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":12,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA02",
+        "precio": 900,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":13,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA03",
+        "precio": 3600,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":14,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA04",
+        "precio": 1200,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":15,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA05",
+        "precio": 2000,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":16,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA06",
+        "precio": 3600,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":17,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA07",
+        "precio": 300,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":18,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA08",
+        "precio": 200,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":19,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA09",
+        "precio": 1200,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+      {
+        "id":20,
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA10",
+        "precio": 3200,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      },
+
+    ]
+  
+)
+
+
+db.producto.find({$and:[{precio:{$gte:100}},{precio:{$lte:5000}}]})
+db.producto.find();
+
+db.producto.insertOne(
+    [
+      {
+       
+        "timeproducto": "2022-01-01 23:01",
+        "nombre": "Escuadra",
+        "descripcion": "escuadra util para tareas precisas",
+        "codigoprod": "AA01",
+        "precio": 3200,
+        "stock": 401,
+        "foto": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/340_Tripadvisor_logo-512.png"
+      }
+    ]
+  
+);
+
+db.producto.updateMany({precio:{$lte:3500}},{$set:{stock:0}})
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 20,
+  modifiedCount: 20,
+  upsertedCount: 0 }
+
+db.producto.find( {precio:{$lte:3500}},{nombre:1}).pretty()
+db.producto.deleteMany({precio:{$lte:1000}})
+{ acknowledged: true, deletedCount: 15 }
+
+db.producto.find().skip(3).sort({precio:1}).limit(1)
+
+db.createUser({user: "pepe",pwd:"asd456",roles:[{role:"read",db:"ecommerce"}]})
+{ ok: 1 }
